@@ -1,0 +1,25 @@
+plugins {
+    id ('java-library')
+    id('blade-build')
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+
+}
+
+jar {
+    manifest {
+        attributes (
+                'Blade-Name'            : 'Test Module',
+                'Blade-Version'         : '1.0',
+                'Blade-Author'          : 'Nobody',
+                'Blade-Packages'        : 'com.example.app1,com.example.app2',
+                'Blade-Install'         : 'app,framework',
+                'Blade-Cold-Start-Only' : 'True'
+        )
+    }
+}
