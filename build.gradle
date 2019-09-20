@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.bladetools:bladedx:1.0'
+    implementation 'org.bladetools:bladedx:1.0.2'
     implementation 'com.github.javaparser:javaparser-core:3.14.14'
     implementation 'commons-io:commons-io:2.6'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.9.3'
@@ -33,8 +33,8 @@ dependencies {
 gradlePlugin {
     // Define the plugin
     plugins {
-        bladebuild {
-            id = 'blade-build'
+        bladeBuildPlugin {
+            id = 'org.blade.build'
             implementationClass = 'org.blade.build.BladeBuildPlugin'
         }
     }
@@ -77,7 +77,7 @@ publishing {
         mavenJava(MavenPublication) {
             groupId = 'org.bladetools'
             artifactId = 'bladebuild'
-            version = '1.0'
+            version = '1.0.2'
             artifact sourcesJar
             from components.java
         }
@@ -97,8 +97,9 @@ bintray {
         labels = ['blade', 'bladebuild']
         publicDownloadNumbers = true
         version {
-            name = '1.0'
+            name = '1.0.2'
             desc = 'Blade Gradle Plugin'
+            attributes = ['gradle-plugin': 'org.blade.build:org.bladetools:bladetools']
         }
     }
 }
